@@ -1,0 +1,215 @@
+/*
+ * Section Request
+ */
+.section-request {
+}
+
+/*
+ *
+ */
+.step-header-title {
+    font-size: 16px;
+    padding: 60px 0 0;
+}
+.step-header-title small {
+    width: 100%;
+    color: #999;
+    display: block;
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+
+.request-step {
+    text-align: center;
+}
+
+.request-step ul {
+    list-style: none;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding: 0;
+}
+.request-step ul li {
+    overflow: hidden;
+    display: inline-block;
+    padding: 4px 6px;
+}
+
+.request-step .form-input {
+    width: 330px;
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+.request-step .form-input input {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 15px;
+    margin-bottom: 12px;
+}
+.request-step .form-zipcode-button {
+    width: 100% !important;
+    height: 50px !important;
+    color: #fff;
+    font-size: 16px;
+    background-color: blueviolet;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    outline: 0 !important;
+    border: 0 !important;
+}
+.request-step .step-header .step-header-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 45px;
+}
+.request-step .step-content .step-header-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 45px;
+}
+
+.request-step  ul.request-colors-list li div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: lightpink;
+    border: 3px solid pink;
+}
+
+.request-step  ul.request-colors-list li div.active {
+    background: red;
+}
+
+.request-step  ul.request-groups-list li,
+.request-step  ul.request-devices-list li {
+    width: 150px;
+
+}
+.request-step  ul.request-groups-list li h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+.request-step  ul.request-groups-list li div,
+.request-step  ul.request-devices-list li div {
+    height: 150px;
+    border: 1px solid #e3e3e3;
+}
+.request-step  ul.request-groups-list li img,
+.request-step  ul.request-devices-list li img {
+    max-height: 75px;
+    display: block;
+    margin: auto;
+}
+.request-step  ul.request-groups-list li div:hover,
+.request-step  ul.request-devices-list li div:hover {
+    border-color: cadetblue;
+}
+.request-step  ul.request-groups-list li div.active,
+.request-step  ul.request-devices-list li div.active {
+    background: lightpink;
+}
+
+.request-step  ul.request-problems-list li div {
+    background: #eee;
+    border: 1px solid #eee;
+    padding: 30px;
+}
+.request-step  ul.request-problems-list li div h3 {
+    font-weight: 300;
+}
+.request-step  ul.request-problems-list li div.active {
+    background: pink;
+}
+
+
+.request-menu {
+    width: 100%;
+    height: 70px;
+    background: #eee;
+}
+.request-menu > div > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-color: transparent !important;
+}
+
+.button-prev-step,
+.button-next-step {
+    width: 150px;
+    height: 60px;
+    bottom: 15px;
+    /*border-radius: 0 !important;*/
+    position: fixed !important;
+    margin: 0 !important;
+}
+.button-prev-step {
+    left: calc(50% - 150px) !important;
+    text-align: right !important;
+}
+.button-next-step {
+    right: calc(50% - 150px) !important;
+    text-align: left !important;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .hidden-this-lg-down span:last-child {
+        display: none !important;
+    }
+}
+
+
+.form-control {
+    width: 420px;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 10px;
+}
+.button-block button {
+    min-height: 50px !important;
+    margin-top: 25px !important;
+}
+
+
+.timing {
+    text-align: left;
+    width: 350px !important;
+    max-width: 100% !important;
+    margin: auto !important;
+}
+
+ul.timing-date {
+    margin-bottom: 30px;
+}
+ul.timing-date li {
+    width: 60px;
+    height: 60px;
+    padding:12px 0;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #eee;
+    margin: 6px;
+}
+ul.timing-date li span {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+ul.timing-date li span.count {
+    font-size: 14px;
+    font-weight: bold;
+}
+ul.timing-date li .today {
+    font-size: 12px;
+    padding: 10px 0;
+    display: block;
+}
+ul.timing-date li.active {
+    opacity: 1 !important;
+    background: lightpink !important;
+}

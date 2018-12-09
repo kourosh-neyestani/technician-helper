@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="95" viewBox="0 0 51 95">
+  <defs>
+    <path id="j7-b" d="M39.1494927,0.880005845 C42.2000493,1.22201828 44.861024,3.90600458 44.861024,7.46245525 L44.861024,77.5700395 C44.9405805,81.6688015 44.536746,84.3298992 43.6495206,85.5533327 C42.3186825,87.388483 40.3891383,88.2273522 37.87585,88.3576463 C33.1671866,88.601753 28.1828359,88.7503953 22.9227979,88.8035732 C22.8107948,88.8088731 22.6989156,88.8078747 22.5871602,88.8068334 C22.4754048,88.8078747 22.3635256,88.8088731 22.2515224,88.8098286 C16.9914844,88.7503953 12.0071337,88.601753 7.29847041,88.3576463 C4.78518207,88.2273522 2.8556379,87.388483 1.52479978,85.5533327 C0.637574377,84.3298992 0.233739921,81.6688015 0.313296417,77.5700395 L0.313296417,7.46245525 C0.313296417,3.90600458 2.97518184,1.25272253 6.02482774,0.880005845 C9.69034731,0.432019303 35.5239327,0.47352704 39.1494927,0.880005845 Z"/>
+    <filter id="j7-a" width="123.7%" height="112%" x="-11.8%" y="-4.8%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius=".275" result="shadowSpreadOuter1"/>
+      <feOffset dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.107223732 0"/>
+    </filter>
+    <linearGradient id="j7-c" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#72A3B8"/>
+      <stop offset="100%" stop-color="#507199"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(3 2)">
+    <use fill="#000" filter="url(#j7-a)" xlink:href="#j7-b"/>
+    <use fill="#FDFDFD" stroke="#5E5E5E" stroke-width=".551" xlink:href="#j7-b"/>
+    <rect width="38.388" height="68.678" x="3.548" y="11.461" fill="url(#j7-c)" stroke="#2F2F2F" stroke-opacity=".359" stroke-width=".716"/>
+    <rect width="8.379" height="3.528" x="18.552" y="82.897" fill="#F5F5F5" stroke="#979797" stroke-opacity=".742" stroke-width=".551" rx="1.432"/>
+    <rect width="8.379" height="1" x="18.397" y="5.183" fill="#D8D8D8" rx=".5"/>
+  </g>
+</svg>
