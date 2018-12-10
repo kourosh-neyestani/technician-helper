@@ -37,34 +37,25 @@ class Request extends Component {
     constructor(props) {
         super(props);
         this.getStepContent = this.getStepContent.bind(this);
-        this.handleSubmitInfo = this.handleSubmitInfo.bind(this);
+        this.handleClickDate = this.handleClickDate.bind(this);
         this.handleClickColor = this.handleClickColor.bind(this);
         this.handleClickGroup = this.handleClickGroup.bind(this);
+        this.handleSubmitInfo = this.handleSubmitInfo.bind(this);
         this.handleClickDevice = this.handleClickDevice.bind(this);
+        this.handleClickProblem = this.handleClickProblem.bind(this);
         this.handleChangeZipcode = this.handleChangeZipcode.bind(this);
         this.handleSubmitZipcode = this.handleSubmitZipcode.bind(this);
-        this.handleClickProblem = this.handleClickProblem.bind(this);
-        // this.handleClickTime = this.handleClickTime.bind(this);
-        this.handleClickDate = this.handleClickDate.bind(this);
         this.state = {
+            checkZipcode: true,
+            present: 1544360291,
             groupId: null,
             zipcode: null,
+            colors: [],
             groups: [],
             devices: [],
             problems: [],
             selectedProblems: [],
             name: null,
-            colors: [
-                {
-                    id: 1,
-                    name: 'red',
-                    code: '#654321'
-                },
-                {name: 'blue'},
-                {name: 'green'},
-                {name: 'orange'},
-                {name: 'black'},
-                {name: 'silver'}],
             form: {
                 device_id: null,
                 zipcode: null,
@@ -89,6 +80,10 @@ class Request extends Component {
             const groups = group.data;
             this.setState({groups});
         });
+        axios.get('http://127.0.0.1:8000/colors/').then(color => {
+            const colors = color.data;
+            this.setState({colors});
+        });
         axios.get('http://127.0.0.1:8000/problems/').then(problem => {
             const problems = problem.data;
             this.setState({problems});
@@ -103,7 +98,6 @@ class Request extends Component {
         const devices = this.state.groups[t].devices;
         this.setState({devices, groupId: id});
     };
-
     handleClickDevice(id) {
 
         this.setState(prevState => ({
@@ -113,7 +107,6 @@ class Request extends Component {
             }
         }))
     }
-
     handleChangeZipcode = (event) => {
         const value = event.target.value;
         this.setState({zipcode: value})
@@ -127,14 +120,22 @@ class Request extends Component {
 
         axios.post('http://127.0.0.1:8000/return/service-possibility', {inputZipcode})
             .then(res => {
-                if (true) {
+                if (true) { //res.data['service-possibility']
                     this.setState(prevState => ({
                         form: {
                             ...prevState.form,
                             zipcode: this.state.zipcode
                         }
-                    }))
+                    }));
+                    this.setState({
+                        checkZipcode: true
+                    });
+                } else {
+                    this.setState({
+                        checkZipcode: false
+                    });
                 }
+                console.log(res.data['service-possibility'])
             })
     };
     handleClickColor = (id) => {
@@ -186,7 +187,23 @@ class Request extends Component {
         }))
 
     };
-
+    handleChangeTime = event => {
+        this.setState(prevState => ({
+            form: {
+                ...prevState.form,
+                time: event.target.value
+            }
+        }));
+    };
+    handleClickDate = (event, id) => {
+        event.preventDefault();
+        this.setState(prevState => ({
+            form: {
+                ...prevState.form,
+                day: id
+            }
+        }));
+    };
 
     // Stepper Methods
     handleNext = () => {
@@ -200,7 +217,6 @@ class Request extends Component {
             activeStep: state.activeStep - 1,
         }));
     };
-
     handleCheck = (id) => {
         if (this.state.groupId != null && id === 0) {
             return true;
@@ -221,25 +237,6 @@ class Request extends Component {
         } else {
             return false;
         }
-    };
-
-    handleChangeTime = event => {
-        this.setState(prevState => ({
-            form: {
-                ...prevState.form,
-                time: event.target.value
-            }
-        }));
-    };
-
-    handleClickDate = (event, id) => {
-        event.preventDefault();
-        this.setState(prevState => ({
-            form: {
-                ...prevState.form,
-                day: id
-            }
-        }));
     };
 
     // Get Step Content
@@ -271,7 +268,7 @@ class Request extends Component {
             return (
                 <li key={i} onClick={() => this.handleClickColor(item.name)}>
                     <div className={(this.state.form.color === item.name) ? 'active' : ''}>
-                        <span className={'color-item' + item.name}></span>
+                        <span style={{backgroundColor: item.code}}></span>
                     </div>
                 </li>
             )
@@ -287,8 +284,7 @@ class Request extends Component {
             )
         });
 
-
-        const now = 1544360291;
+        const now = this.state.present;
 
         switch (step) {
             case 0:
@@ -300,7 +296,7 @@ class Request extends Component {
                             </h3>
                         </div>
                         <div className="step-content">
-                            <ul className="request-groups-list">
+                            <ul className="request-devices-list">
                                 {(!Array.isArray(groups) || !groups.length) ? '...' : groups}
                             </ul>
                         </div>
@@ -333,10 +329,16 @@ class Request extends Component {
                             <form onSubmit={this.handleSubmitZipcode}>
                                 <div className="form-input">
                                     <input type="text" onChange={(event) => this.handleChangeZipcode(event)}
-                                           placeholder="Enter your ZIP code"/>
+                                           placeholder="Enter your ZIP code hear" value={this.state.form.zipcode ? this.state.form.zipcode : null}/>
                                     <button className="form-zipcode-button">
-                                        Continue
+                                        Check ZIP code
                                     </button>
+                                </div>
+                                <div className={this.state.checkZipcode ? "hide" : "form-error"}>
+                                    <h3>Sorry, we do not currently service in your area<br/>
+                                    <small>
+                                        Please choose another zip code
+                                    </small></h3>
                                 </div>
                             </form>
                         </div>
@@ -461,7 +463,7 @@ class Request extends Component {
                                                 />
                                             </FormControl>
                                         </div>
-                                        <div className="form-control button-block">
+                                        <div className="form-control button-block hidden-lg-down">
                                             <Button variant="contained" size="large" color="primary" type="submit"
                                                     fullWidth={true}>
                                                 Submit Repait Request
@@ -515,6 +517,12 @@ class Request extends Component {
                                                     required={true}
                                                 />
                                             </FormControl>
+                                        </div>
+                                        <div className="form-control button-block hidden-lg-up">
+                                            <Button variant="contained" size="large" color="primary" type="submit"
+                                                    fullWidth={true}>
+                                                Submit Repait Request
+                                            </Button>
                                         </div>
                                     </Col>
                                 </Row>
