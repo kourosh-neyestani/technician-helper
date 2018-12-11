@@ -2,39 +2,154 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
     position: fixed;
-    background: #fff;
     overflow: hidden;
-    box-shadow: 0 2px 4px 0 rgba(46,62,72,.12), 0 0 2px 0 rgba(46,62,72,.12);
+    background-color: transparent;
+    transition: all 300ms;
     z-index: 999;
 }
-.site-header + * {
-    padding-top: 100px !important;
+.site-header.isScrolling {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px 0 rgba(46,62,72,.12), 0 0 2px 0 rgba(46,62,72,.12);
 }
-
+@media (max-width: 991px) {
+    .site-header {
+        height: 60px;
+    }
+    .site-header + * {
+        padding-top: 60px !important;
+    }
+}
+@media (min-width: 992px) {
+    .site-header {
+        height: 70px;
+    }
+    .site-header + * {
+        padding-top: 70px !important;
+    }
+}
+/*
+ * Main Menu
+ */
 .site-header .header-main-menu {
     display: block;
 }
 .site-header .header-main-menu ul {
     list-style: none;
-    margin: 0 -15px 0 -15px;
+    margin: 0;
     padding: 0;
 }
 .site-header .header-main-menu ul li {
     float: left;
+    height: 70px;
+    line-height: 70px;
     display: inline-block;
-    margin-right: 20px;
-    padding: 0 15px;
 }
-.site-header .header-main-menu ul li a,
-.site-header .header-main-menu ul li a:hover {
-    line-height: 100px;
-    text-decoration: none;
+.site-header .header-main-menu ul li button {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-transform: capitalize !important;
+    letter-spacing: .04em;
+}
+.site-header .header-main-menu ul li.header-logo {
+    width: 210px;
+    line-height: 0;
+    padding-top: 12px;
+    margin-right: 0;
+    margin-top: -6px;
+}
+.site-header .header-main-menu ul li.header-logo img {
+    width: 180px;
+    height: auto;
+}
+@media (max-width: 991px) {
+    .site-header .header-main-menu {
+        display: none;
+    }
+}
+/*
+ * Button Book a Service
+ */
+.site-header .button-request {
+    right: 0;
+    position: absolute;
+}
+@media (max-width: 991px) {
+    .site-header .button-request {
+        top: 10px;
+    }
+}
+@media (min-width: 992px) {
+    .site-header .button-request {
+        top: 15px;
+    }
+}
+/*
+ * Header Buttons
+ */
+.site-header .button-mobile {
+    top: 3px;
+    left: -3px;
+    display: none;
+    position: absolute;
+    background-color: transparent !important;
+    box-shadow: inherit !important;
+}
+.site-header .button-mobile .button-line {
+    width: 25px;
+    height: 3px;
+    display: block;
+    margin: 0 auto 4px;
+    background-color: var(--primary);
+}
+.site-header .button-request {
+    top: 12px;
+    color: #fff;
+    width: 120px;
+    height: 36px;
+    position: absolute;
+    text-align: center;
+    background: var(--primary);
+    border: 0;
+    border-radius: 3px;
+    border-bottom: 2px solid var(--primary-3);
+    outline: 0 !important;
 }
 
-.site-header .header-main-menu ul li .header-logo {
-    display: block;
-    padding: 20px 0;
-    margin-right: 20px;
+@media (max-width: 991px) {
+    .site-header .button-mobile {
+        display: block;
+    }
+    .site-header .button-request {
+        right: 12px;
+    }
+}
+@media (min-width: 991px) {
+    .site-header .button-request {
+        top: 18px;
+    }
+}
+
+
+.site-header .header-main-menu ul li button {
+    color: #999 !important;
+}
+.site-header.isScrolling .header-main-menu ul li button {
+    color: #333 !important;
+}
+.site-header .button-request {
+    opacity: 0;
+    transition: all 600ms;
+    transform: translate(0, -120px);
+}
+.site-header.isScrolling .button-request {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.site-header .button-mobile .button-line {
+    background-color: #eee;
+}
+.site-header.isScrolling .button-mobile .button-line {
+    background-color: var(--primary);
 }

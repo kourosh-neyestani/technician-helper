@@ -1,37 +1,33 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Header from "./components/Header";
+
 import Request from "./scenes/Request";
+import Home from "./scenes/Home";
+import Header from "./components/Header";
 
 class AppRouter extends Component {
     render() {
         return (
             <Router>
                 <div>
-
+                    <Route path="/request" component={Request}></Route>
                     <Header/>
 
                     <Route exact path="/" component={Home}/>
-                    <Route  path="/about" component={About}/>
+                    <Route path="/about" component={About}/>
                     <Route path="/contact" component={Contact}/>
                     <Route path="/services" component={Services}/>
                     <Route path="/gallery" component={Gallery}/>
 
                     {/* Requests */}
-                    <Route path="/request" component={Request}></Route>
+
+                    {/*<Route path="/faq" component={Faq}></Route>*/}
                 </div>
             </Router>
         );
     }
 }
 
-const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
-}
 const About = () => {
     return (
         <div>

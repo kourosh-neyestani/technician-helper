@@ -1,0 +1,93 @@
+/*
+ * Hero Carousel
+ */
+.hero-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+.hero-carousel .carousel-item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.hero-carousel .carousel-item .carousel-cover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 45;
+    background: red repeat center center / 6px;
+}
+.hero-carousel .carousel-item .carousel-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 24;
+    opacity: .25;
+    background: #000 no-repeat center center / cover;
+}
+.hero-carousel .carousel-item .carousel-inner {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 30;
+}
+.hero-carousel .carousel-item .carousel-inner .desc {
+    color: #666 !important;
+    font-size: 18px;
+    font-weight: 300;
+}
+.hero-carousel .carousel-item .carousel-inner .title {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2 !important;
+    margin: 0 auto 15px !important;
+    padding: 0 !important;
+    max-width: 768px;
+}
+.hero-carousel .carousel-item .carousel-inner .caption {
+    color: #aaa;
+    font-size: 27px;
+    font-weight: 100;
+    letter-spacing: -.02em;
+    margin-bottom: 6px !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+@media (max-width: 991px) {
+    .hero-carousel {
+    }
+    .hero-carousel .carousel-item {
+    }
+    .hero-carousel .carousel-item .carousel-inner .title {
+        font-size: 33px;
+    }
+    .hero-carousel .carousel-item .carousel-inner .desc {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .hero-carousel .carousel-item .carousel-inner .caption {
+        font-size: 20px;
+    }
+}
+@media (min-width: 992px) {
+    .hero-carousel {
+    }
+    .hero-carousel .carousel-item {
+    }
+    .hero-carousel .carousel-item .carousel-inner {
+        text-align: center;
+    }
+    .hero-carousel .carousel-item .carousel-inner .title {
+    }
+}

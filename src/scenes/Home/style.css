@@ -1,0 +1,14 @@
+.section-home {
+    position: relative;
+}
+
+@media (max-width: 992px) {
+    .section-home {
+        top: -60px;
+    }
+}
+@media (min-width: 992px) {
+    .section-home {
+        top: -70px;
+    }
+}

@@ -46,6 +46,8 @@ class Request extends Component {
         this.handleChangeZipcode = this.handleChangeZipcode.bind(this);
         this.handleSubmitZipcode = this.handleSubmitZipcode.bind(this);
         this.state = {
+            base_url: "http://laravel.mynikan2.ir/api",
+            totalPrice: 0,
             checkZipcode: true,
             present: 1544360291,
             groupId: null,
@@ -76,17 +78,16 @@ class Request extends Component {
 
     // ComponentDidMount
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/groups').then(group => {
+
+        axios.get(this.state.base_url + '/groups').then(group => {
             const groups = group.data;
             this.setState({groups});
         });
-        axios.get('http://127.0.0.1:8000/colors/').then(color => {
+
+
+        axios.get(this.state.base_url + '/colors').then(color => {
             const colors = color.data;
             this.setState({colors});
-        });
-        axios.get('http://127.0.0.1:8000/problems/').then(problem => {
-            const problems = problem.data;
-            this.setState({problems});
         });
     }
 
@@ -97,7 +98,10 @@ class Request extends Component {
 
         const devices = this.state.groups[t].devices;
         this.setState({devices, groupId: id});
+
+
     };
+
     handleClickDevice(id) {
 
         this.setState(prevState => ({
@@ -106,7 +110,17 @@ class Request extends Component {
                 device_id: id
             }
         }))
+
+
+        let problem_url = this.state.base_url + '/devices/' + id + '/problems';
+
+
+        axios.get(problem_url).then(problem => {
+            const problems = problem.data;
+            this.setState({problems});
+        });
     }
+
     handleChangeZipcode = (event) => {
         const value = event.target.value;
         this.setState({zipcode: value})
@@ -114,13 +128,12 @@ class Request extends Component {
     handleSubmitZipcode = event => {
         event.preventDefault();
 
-        const inputZipcode = {
-            zipcode: this.state.zipcode
-        };
+        let data = new FormData();
+        data.set('zipcode', this.state.zipcode);
 
-        axios.post('http://127.0.0.1:8000/return/service-possibility', {inputZipcode})
+        axios.post(this.state.base_url + '/return/service-possibility', data)
             .then(res => {
-                if (true) { //res.data['service-possibility']
+                if (res.data['service-possibility']) { //res.data['service-possibility']
                     this.setState(prevState => ({
                         form: {
                             ...prevState.form,
@@ -135,7 +148,6 @@ class Request extends Component {
                         checkZipcode: false
                     });
                 }
-                console.log(res.data['service-possibility'])
             })
     };
     handleClickColor = (id) => {
@@ -145,15 +157,21 @@ class Request extends Component {
                 color: id
             }
         }))
+
+
     };
-    handleClickProblem = (id) => {
+
+
+    handleClickProblem = (id, price) => {
 
         let problemsArray = this.state.selectedProblems,
             problemsIndex = problemsArray.indexOf(id);
 
         if (problemsArray.includes(id) && problemsIndex > -1) {
-            this.state.selectedProblems.splice(problemsIndex, id);
+            this.state.totalPrice = this.state.totalPrice - price;
+            this.state.selectedProblems.splice(problemsIndex, 1);
         } else {
+            this.state.totalPrice = this.state.totalPrice + price;
             this.state.selectedProblems.push(id);
         }
 
@@ -230,7 +248,7 @@ class Request extends Component {
             return true;
         } else if (this.state.form.day != null && this.state.form.time != null && id === 5) {
             return true;
-        } else if (this.state.form.address != null && this.state.form.name !=  null && this.state.form.email != null & this.state.form.mobile != null && id === 6) {
+        } else if (this.state.form.address != null && this.state.form.name != null && this.state.form.email != null & this.state.form.mobile != null && id === 6) {
             return true;
         } else if (id === 7) {
             return true;
@@ -276,9 +294,9 @@ class Request extends Component {
 
         const problems = this.state.problems.map((item, i) => {
             return (
-                <li key={i} onClick={() => this.handleClickProblem(item.id)}>
+                <li key={i} onClick={() => this.handleClickProblem(item.id, item.price)}>
                     <div className={(this.state.form.problems.includes(item.id)) ? 'active' : 'false'}>
-                        <h3>{item.name}</h3>
+                        <h3>{item.name}</h3> <strong>${item.price}</strong>
                     </div>
                 </li>
             )
@@ -327,18 +345,29 @@ class Request extends Component {
                         </div>
                         <div className="step-content step-content-zipcode">
                             <form onSubmit={this.handleSubmitZipcode}>
-                                <div className="form-input">
-                                    <input type="text" onChange={(event) => this.handleChangeZipcode(event)}
-                                           placeholder="Enter your ZIP code hear" value={this.state.form.zipcode ? this.state.form.zipcode : null}/>
-                                    <button className="form-zipcode-button">
-                                        Check ZIP code
-                                    </button>
+                                <FormControl fullWidth>
+                                    <TextField
+                                        name="zipcode"
+                                        label="Enter your ZIP code hear"
+                                        required={true}
+                                        helperText=""
+                                        onChange={(event) => this.handleChangeZipcode(event)}
+                                        value={this.state.form.zipcode ? this.state.form.zipcode : null}
+                                        style={{marginBottom: 12}}
+                                    />
+                                </FormControl>
+                                <div className="button-block">
+                                    <Button variant="contained" size="large" color="secondary" type="submit"
+                                            fullWidth={true}>
+                                        Check ZIPCODE
+                                    </Button>
                                 </div>
                                 <div className={this.state.checkZipcode ? "hide" : "form-error"}>
                                     <h3>Sorry, we do not currently service in your area<br/>
-                                    <small>
-                                        Please choose another zip code
-                                    </small></h3>
+                                        <small>
+                                            Please choose another zip code
+                                        </small>
+                                    </h3>
                                 </div>
                             </form>
                         </div>
@@ -366,6 +395,7 @@ class Request extends Component {
                         <div className="step-header">
                             <h3 className="step-header-title">
                                 What's the issue?
+                                <small>{this.state.totalPrice !== 0 ? 'Total Price: $' + this.state.totalPrice : ''}</small>
                             </h3>
                         </div>
                         <div className="step-content">
@@ -387,11 +417,12 @@ class Request extends Component {
                         <div className="step-content timing">
                             <ul className="timing-date">
                                 {[0, 1, 2, 3, 4].map((key, i) =>
-                                    <li key={i} className={( this.state.form.day === i ) ? 'active' : ''}
+                                    <li key={i} className={(this.state.form.day === i) ? 'active' : ''}
                                         onClick={(e) => this.handleClickDate(e, i)}>
                                         <span
                                             className="count">{i === 0 ? null : moment.unix(now).add(i, 'days').format("D")}</span>
-                                        <span className={i === 0 ? 'today' : ''}>{i === 0 ? "today" : moment.unix(now).add(i, 'days').format("ddd")}</span>
+                                        <span
+                                            className={i === 0 ? 'today' : ''}>{i === 0 ? "today" : moment.unix(now).add(i, 'days').format("ddd")}</span>
                                     </li>
                                 )}
                             </ul>
@@ -434,66 +465,11 @@ class Request extends Component {
                                         <div className="form-control">
                                             <FormControl fullWidth>
                                                 <TextField
-                                                    name="address"
-                                                    label="Address"
-                                                    id="margin-none"
-                                                    required={true}
-                                                    // className={classes.textField}
-                                                    helperText="Please select your address from the list"
-                                                />
-                                            </FormControl>
-                                        </div>
-                                        <div className="form-control">
-                                            <FormControl fullWidth>
-                                                <TextField
-                                                    label="More details"
-                                                    id="margin-none"
-                                                    // className={classes.textField}
-                                                    helperText="Add / suite / floor No. (optional)"
-                                                />
-                                            </FormControl>
-                                        </div>
-                                        <div className="form-control">
-                                            <FormControl fullWidth>
-                                                <TextField
-                                                    label="Instructions"
-                                                    id="margin-none"
-                                                    // className={classes.textField}
-                                                    helperText="Add instructions (optional)"
-                                                />
-                                            </FormControl>
-                                        </div>
-                                        <div className="form-control button-block hidden-lg-down">
-                                            <Button variant="contained" size="large" color="primary" type="submit"
-                                                    fullWidth={true}>
-                                                Submit Repait Request
-                                            </Button>
-                                        </div>
-                                    </Col>
-                                    <Col lg={6}>
-                                        <h3 className="step-header-title">
-                                            Enter your personal info
-                                        </h3>
-                                        <div className="form-control">
-                                            <FormControl fullWidth>
-                                                <TextField
                                                     name="name"
                                                     label="Name"
                                                     helperText="Some important text"
                                                     required={true}
                                                 />
-                                            </FormControl>
-                                        </div>
-                                        <div className="form-control">
-                                            <FormControl fullWidth>
-                                                <TextField
-                                                    name="email"
-                                                    type="email"
-                                                    label="Email address"
-                                                    helperText="Please type in a valid email address"
-                                                    required={true}
-                                                />
-
                                             </FormControl>
                                         </div>
                                         <div className="form-control">
@@ -515,11 +491,42 @@ class Request extends Component {
                                                     label="Mobile number"
                                                     helperText="Enter your mobile number"
                                                     required={true}
+                                                    style={{marginBottom: 12}}
                                                 />
                                             </FormControl>
                                         </div>
-                                        <div className="form-control button-block hidden-lg-up">
-                                            <Button variant="contained" size="large" color="primary" type="submit"
+                                    </Col>
+                                    <Col lg={6}>
+                                        <h3 className="step-header-title">
+                                            Enter your personal info
+                                        </h3>
+                                        <div className="form-control">
+                                            <FormControl fullWidth>
+                                                <TextField
+                                                    name="address"
+                                                    label="Address"
+                                                    id="margin-none"
+                                                    required={true}
+                                                    // className={classes.textField}
+                                                    helperText="Please select your address from the list"
+                                                />
+                                            </FormControl>
+                                        </div>
+                                        <div className="form-control">
+                                            <FormControl fullWidth>
+                                                <TextField
+                                                    name="email"
+                                                    type="email"
+                                                    label="Email address"
+                                                    helperText="Please type in a valid email address"
+                                                    required={true}
+                                                    style={{marginBottom: 25}}
+                                                />
+
+                                            </FormControl>
+                                        </div>
+                                        <div className="form-control button-block hidden-lg-down">
+                                            <Button variant="contained" size="large" color="secondary" type="submit"
                                                     fullWidth={true}>
                                                 Submit Repait Request
                                             </Button>
@@ -566,10 +573,27 @@ class Request extends Component {
                                         <h3 className="step-header-title">
                                             Thanks {this.state.form.name}
                                             <br/>
-                                            <br/>
                                             <small>we received your request</small>
                                         </h3>
-                                        <h5>We will provide your tech's name and arrival time by SMS and email</h5>
+                                        <h4>We will provide your tech's name <br/>and arrival time by SMS and email</h4>
+                                        <ul className="last-step">
+                                            <li>
+                                                <span className="var">Device: </span>
+                                                <span className="val">iPhone {this.state.form.deviceId}</span>
+                                            </li>
+                                            <li>
+                                                <span className="var">Color: </span>
+                                                <span className="val">{this.state.form.color}</span>
+                                            </li>
+                                            <li>
+                                                <span className="var">Address: </span>
+                                                <span className="val">{this.state.form.address}</span>
+                                            </li>
+                                            <li>
+                                                <span className="var">Cost: </span>
+                                                <span className="val">${this.state.totalPrice}</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div className="step-content">
                                         <ul className="request-colors-list">
@@ -591,7 +615,7 @@ class Request extends Component {
                                     </Button>
                                     <Button
                                         variant="contained"
-                                        color="secondary"
+                                        color="primary"
                                         onClick={this.handleNext}
                                         className={classes.button + ' button-next-step'}
                                         disabled={this.handleCheck(activeStep) !== true}
@@ -603,9 +627,7 @@ class Request extends Component {
                         )}
                     </div>
                 </Container>
-                {
-                    console.log(this.state.form)
-                }
+
             </div>
         );
     }

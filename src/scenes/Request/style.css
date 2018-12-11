@@ -1,5 +1,4 @@
 
-
 /*
  * Section Request
  */
@@ -21,55 +20,9 @@
     font-weight: 400;
     margin-top: 3px;
 }
-.request-step .hide {
-    display: none !important;
-}
-.request-step .form-input {
-    width: 330px;
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-}
-.request-step .form-error {
-    width: 330px;
-    margin: auto;
-}
-.request-step .form-error h3 small {
-    color: #999;
-}
-.request-step .form-input input {
-    width: 100%;
-    font-size: 16px;
-    padding: 15px 15px;
-    margin-bottom: 12px;
-    border-radius: 3px;
-    border-color: #ccc !important;
-}
-.request-step .form-zipcode-button {
-    width: 100% !important;
-    height: 50px !important;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #333;
-    display: block !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    outline: 0 !important;
-    border: 0 !important;
-    border-radius: 3px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-}
-.request-step .step-header .step-header-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 45px;
-}
-.request-step .step-content .step-header-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 45px;
-}
+
+
+
 
 
 /*
@@ -99,8 +52,28 @@
     overflow: hidden;
     position: relative;
     display: inline-block;
+    background-color: transparent !important;
     padding: 4px 6px;
 }
+/*
+ * Zipcode
+ */
+.step-content-zipcode form {
+    width: 330px;
+    max-width: 100%;
+    margin: auto;
+}
+.step-content-zipcode form input {
+    border-bottom: 2px solid #ccc;
+    border-radius: 5px;
+}
+.step-content-zipcode form h3 small {
+    color: #999;
+}
+.step-content-zipcode form .hide {
+    display: none !important;
+}
+
 /*
  * Colors
  */
@@ -120,7 +93,6 @@ ul.request-colors-list li div span {
     width: 54px;
     height: 54px;
     display: block;
-    background: red;
     border-radius: 50%;
     border: 2px solid #fff;
     margin: 1px;
@@ -129,19 +101,20 @@ ul.request-colors-list li div:hover {
     border-color: #ccc;
 }
 ul.request-colors-list li div.active {
-    border-color: #999;
+    border-color: var(--secondary);
 }
 /*
  * Devices
  */
 ul.request-devices-list li div {
     color: #666;
-    border-radius: 3px;
-    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
 }
 ul.request-devices-list li div h3 {
     font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
 }
 ul.request-devices-list li div img {
     max-height: 75px;
@@ -149,24 +122,39 @@ ul.request-devices-list li div img {
     margin: 0 auto 18px;
 }
 ul.request-devices-list li div:hover {
-    border-color: pink;
+    border: 1px solid var(--secondary);
 }
 ul.request-devices-list li div.active {
-    background: #eee;
+    color: var(--primary);
+    background: #fff;
+    transition: all .3s ease;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
 }
 /*
  * Problems
  */
 ul.request-problems-list li div {
-    background: #eee;
-    border: 1px solid #eee;
+    color: #666;
+    border-radius: 5px;
+    border: 1px solid #dedede;
     padding: 20px 6px;
 }
+ul.request-problems-list li div {
+    font-size: 15px;
+    font-weight: 400;
+}
 ul.request-problems-list li div h3 {
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 400;
+}
+ul.request-problems-list li div:hover {
+    color: #333;
 }
 ul.request-problems-list li div.active {
-    background: pink;
+    color: var(--primary);
+    border-color: var(--primary-3);
+    box-shadow: 0 0 0 1px var(--primary);
 }
 @media (max-width: 350px) {
     ul.request-problems-list li {
@@ -185,9 +173,15 @@ ul.request-problems-list li div.active {
     }
     ul.request-devices-list li {
         width: 33.3333333333% !important;
+        padding: 3px 3px !important;
+    }
+    ul.request-devices-list li div h3 {
+        font-size: .75em !important;
+        margin: 14px 0 12px !important;
+        padding: 0 !important;
     }
     ul.request-devices-list li div img {
-        max-height: 60px;
+        max-height: 51px !important;
     }
 }
 @media (min-width: 500px) and (max-width: 569px) {
@@ -241,11 +235,15 @@ ul.request-problems-list li div.active {
     }
 }
 
-
+/*
+ * Request Menu
+ */
 .request-menu {
     width: 100%;
     height: 70px;
     background: #eee;
+    position: relative;
+    z-index: 9999999;
 }
 .request-menu > div > div {
     padding-left: 0 !important;
@@ -262,6 +260,7 @@ ul.request-problems-list li div.active {
     position: fixed !important;
     margin: 0 !important;
     z-index: 999;
+    opacity: 1 !important;
 }
 .button-prev-step {
     left: calc(50% - 153px) !important;
@@ -315,7 +314,6 @@ ul.request-problems-list li div.active {
 }
 .button-block button {
     min-height: 50px !important;
-    margin-top: 25px !important;
 }
 
 
@@ -337,7 +335,7 @@ ul.timing-date li {
     text-align: center;
     border-radius: 50%;
     display: inline-block;
-    background-color: #eee;
+    background-color: #dedede;
     margin: 6px;
 }
 ul.timing-date li span {
@@ -356,7 +354,7 @@ ul.timing-date li .today {
 }
 ul.timing-date li.active {
     opacity: 1 !important;
-    background: lightpink !important;
+    background: var(--secondary) !important;
 }
 
 @media (max-width: 569px) {
@@ -393,5 +391,53 @@ ul.timing-date li.active {
 @media (min-width: 992px) {
     .hidden-lg-up {
         display: none;
+    }
+}
+
+/*
+ * Last Steo
+ */
+ul.last-step {
+    width: 300px;
+    max-width: 100%;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+}
+ul.last-step li {
+    height: 50px;
+    display: block;
+    line-height: 50px;
+}
+ul.last-step li:not(:last-child) {
+    border-bottom: 2px solid #dedede;
+}
+ul.last-step li .var {
+    float: left;
+    display: inline-block;
+}
+ul.last-step li .val {
+    float: right;
+    display: inline-block;
+}
+
+
+/*
+ * Step Header Title
+ */
+.request-step .step-header .step-header-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 45px;
+}
+.request-step .step-content .step-header-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+    .request-step .step-content .step-header-title {
+        font-size: 18px !important;
+        font-weight: 300;
     }
 }
