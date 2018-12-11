@@ -1,92 +1,87 @@
 import React from 'react';
+import {Container, Row, Col} from 'react-grid-system';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 import './style.css';
-import {Row, Col} from 'react-grid-system';
 
 class Features extends React.Component {
     render() {
         return (
-            <section className="pt-90 pb-90 overlay-light overlay-image overlay-gradient">
+            <section className="pt-90 pb-90 overlay-light overlay-image overlay-gradient" style={{backgroundImage: "url(" + require('./bg-1.jpg') + ")"}}>
                 <span className="bg-gradient bg-gradient-90"></span>
-                <div className="container">
-                    <div className="pt-30 pb-30 max-w-768 div-center text-center">
-                        <h3 className="mb-10 fw-100 ls--20 text-light-3">We are Awesome</h3>
-                        <h2 className="fs-50 fw-600 lh-54">Engaging, purposeful, and responsive</h2>
-                        <div className="divider divider-line"></div>
-                    </div>
+                <Container>
                     <Row>
-                        <Col lg={4}>
-
-                            <div className="mobile-app">
-                                <div className="mobile-app-inside"></div>
+                        <Col lg={4} className="order-lg-2">
+                            <div className="mobile-app" style={{backgroundImage: "url(" + require('./app.png') + ")"}}>
+                                <div className="mobile-app-inside" style={{backgroundImage: "url(" + require('./app-inside.jpg') + ")"}}></div>
                             </div>
                         </Col>
-                        <Col md={6} lg={4}>
-
+                        <Col md={6} lg={4} className="order-lg-1">
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-code"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">Clean Code</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">Clean Code</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-heart"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">Great Support</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">Great Support</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-desktop"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">Unique Design</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">Unique Design</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                         </Col>
-                        <Col md={6} lg={4}>
+                        <Col md={6} lg={4}  className="order-lg-3">
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-paint-brush"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">Modern Design</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">Modern Design</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-sun"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">High Resolution</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">High Resolution</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
-                                    <button className="icon-button icon-button-md button-primary">
-                                        <i className="fas fa-mobile-alt"></i>
-                                    </button>
-                                    <h4 className="inline-block fs-21 pl-10 pr-10">Fully Responsive</h4>
+                                    <Fab size="large" color="primary" aria-label="Add" className="icon-button">
+                                        <AddIcon />
+                                    </Fab>
+                                    <h4 className="inline-block fs-21 pl-15 pr-15">Fully Responsive</h4>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetuer piscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa.</p>
                             </div>
                         </Col>
                     </Row>
-                </div>
+                </Container>
             </section>
         )
     }

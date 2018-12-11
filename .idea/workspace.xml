@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd9e4c84-db2e-4864-bc6a-74c5028d8f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Features/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Features/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/components/NavMenu/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/components/Sticky/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Heading/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Heading/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Home/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Features/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Features/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Features/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Features/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Request/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Request/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Request/style.css" afterDir="false" />
     </list>
@@ -33,13 +20,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Request/index.js">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -48,36 +32,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tra</find>
-      <find>header-main-menu</find>
-      <find>button-side-menu</find>
-      <find>header-button-request</find>
-      <find>img</find>
-      <find>cont</find>
-      <find>Container</find>
-      <find>header</find>
-      <find>divider</find>
-      <find>orange</find>
-      <find>Button</find>
-      <find>button-mobile</find>
-      <find>center center</find>
-      <find>style</find>
-      <find>http://127.0.0.1:8000</find>
-      <find>&lt;</find>
-      <find>http://laravel.mynikan2.ir</find>
-      <find>Fra</find>
-      <find>&lt;Col</find>
-      <find>Device</find>
-      <find>dev</find>
-      <find>footer</find>
-      <find>.request-step .step-content .step-header-title</find>
-      <find>device</find>
-      <find>devices</find>
-      <find>next-st</find>
-      <find>value</find>
-      <find>value=</find>
+      <find>total</find>
+      <find>ClickProblem</find>
+      <find>name</find>
+      <find>handleClickPro</find>
+      <find>order</find>
+      <find>button-next</find>
+      <find>item</find>
+      <find>ul.timing-date li</find>
       <find>zipcode</find>
-      <find>colors</find>
+      <find>request</find>
+      <find>request-me</find>
+      <find>device</find>
+      <find>problems</find>
+      <find>request-menu</find>
+      <find>Step</find>
+      <find>order-lg</find>
+      <find>order-lg-2</find>
+      <find>img</find>
+      <find>url</find>
+      <find>.mobile-app</find>
+      <find>overlay</find>
+      <find>../assets/img</find>
+      <find>inline-block fs-21 pl-10 pr-10&quot;&gt;</find>
+      <find>timing</find>
+      <find>Butto</find>
+      <find>Button</find>
+      <find>over</find>
+      <find>rgba(114, 2, 187, .92)</find>
+      <find>devices</find>
+      <find>.root</find>
     </findStrings>
     <replaceStrings>
       <replace>Header</replace>
@@ -90,6 +74,9 @@
       <replace>button-request</replace>
       <replace>http://laravel.mynikan2.ir</replace>
       <replace>http://laravel.mynikan2.ir/api</replace>
+      <replace>../assets/img</replace>
+      <replace>inline-block fs-21 pl-15 pr-15&quot;&gt;</replace>
+      <replace>rgba(var(--secondary-rgb), .92)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -119,17 +106,17 @@
         <option value="$PROJECT_DIR$/../index.js" />
         <option value="$PROJECT_DIR$/src/scenes/Home/style.css" />
         <option value="$PROJECT_DIR$/src/components/Header/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Header/style.css" />
-        <option value="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/index.js" />
         <option value="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/style.css" />
         <option value="$PROJECT_DIR$/src/scenes/Home/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Features/style.css" />
         <option value="$PROJECT_DIR$/src/AppRouter.js" />
-        <option value="$PROJECT_DIR$/src/scenes/Request/style.css" />
-        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/index.js" />
         <option value="$PROJECT_DIR$/src/components/Features/index.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/scenes/Request/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Features/style.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/scenes/Request/style.css" />
+        <option value="$PROJECT_DIR$/src/components/Header/style.css" />
+        <option value="$PROJECT_DIR$/src/App.css" />
       </list>
     </option>
   </component>
@@ -179,7 +166,7 @@
               <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="Header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
@@ -209,6 +196,7 @@
     <property name="node.js.selected.package.eslint" value="C:\Users\Kourosh\Desktop\react-arsham\node_modules\eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2018.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -253,12 +241,12 @@
       <workItem from="1544421694938" duration="18613000" />
       <workItem from="1544445218023" duration="8628000" />
       <workItem from="1544458207352" duration="4445000" />
-      <workItem from="1544508889972" duration="32015000" />
+      <workItem from="1544508889972" duration="39919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148600000" />
+    <option name="totallyTimeSpent" value="156504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -363,10 +351,37 @@
     <entry file="file://$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/slick.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppRouter.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Features/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
+        <state relative-caret-position="219">
+          <caret line="66" column="83" selection-start-line="66" selection-start-column="83" selection-end-line="66" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Request/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="532" column="101" selection-start-line="532" selection-start-column="101" selection-end-line="532" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Features/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -375,38 +390,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Request/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="264" column="19" lean-forward="true" selection-start-line="264" selection-start-column="19" selection-end-line="264" selection-end-column="19" />
+        <state relative-caret-position="212">
+          <caret line="128" column="57" selection-start-line="128" selection-start-column="57" selection-end-line="128" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Features/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Header/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Header/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1661">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Request/index.js">
+    <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="181">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
         </state>
       </provider>
     </entry>

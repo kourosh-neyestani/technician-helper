@@ -33,6 +33,7 @@ function getSteps() {
     return ['Select device', 'Device model', 'Enter zip code', 'Device color', 'Issues', 'Timing', 'Personal info'];
 }
 
+
 class Request extends Component {
     constructor(props) {
         super(props);
@@ -163,6 +164,8 @@ class Request extends Component {
 
 
     handleClickProblem = (id, price) => {
+
+        price = parseInt(price);
 
         let problemsArray = this.state.selectedProblems,
             problemsIndex = problemsArray.indexOf(id);
@@ -351,6 +354,7 @@ class Request extends Component {
                                         label="Enter your ZIP code hear"
                                         required={true}
                                         helperText=""
+                                        type="number"
                                         onChange={(event) => this.handleChangeZipcode(event)}
                                         value={this.state.form.zipcode ? this.state.form.zipcode : null}
                                         style={{marginBottom: 12}}
@@ -525,7 +529,7 @@ class Request extends Component {
 
                                             </FormControl>
                                         </div>
-                                        <div className="form-control button-block hidden-lg-down">
+                                        <div className="form-control button-block">
                                             <Button variant="contained" size="large" color="secondary" type="submit"
                                                     fullWidth={true}>
                                                 Submit Repait Request
@@ -549,6 +553,9 @@ class Request extends Component {
 
         return (
             <div className="section-request section-request-horizontal">
+                <div className="request-header">
+
+                </div>
                 <div className="request-menu">
                     <Container>
                         <Stepper activeStep={activeStep}>
@@ -607,18 +614,27 @@ class Request extends Component {
                                 {this.getStepContent(activeStep)}
                                 <div>
                                     <Button
-                                        disabled={activeStep === 0}
                                         onClick={this.handleBack}
+                                        disabled={activeStep === 0}
                                         className={classes.button + ' button-prev-step'}
+                                        style={{
+                                            color: (activeStep === 0) ? '#666' : '#333',
+                                            backgroundColor: (activeStep === 0) ? 'transparent' : '#eee'
+                                        }}
                                     >
                                         Back
                                     </Button>
                                     <Button
-                                        variant="contained"
                                         color="primary"
+                                        variant="contained"
                                         onClick={this.handleNext}
                                         className={classes.button + ' button-next-step'}
                                         disabled={this.handleCheck(activeStep) !== true}
+
+                                        style={{
+                                            color: this.handleCheck(activeStep) ? '#fff' : '#333',
+                                            backgroundColor: this.handleCheck(activeStep) ? '#1264bc' : '#eee'
+                                        }}
                                     >
                                         {activeStep === steps.length - 1 ? 'Finish' : 'Next '}
                                     </Button>

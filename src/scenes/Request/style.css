@@ -3,7 +3,10 @@
  * Section Request
  */
 .section-request {
+    background-color: #fff;
     padding-bottom: 75px;
+    position: relative;
+    z-index: 1000;
 }
 
 /*
@@ -122,14 +125,14 @@ ul.request-devices-list li div img {
     margin: 0 auto 18px;
 }
 ul.request-devices-list li div:hover {
-    border: 1px solid var(--secondary);
+    border-color: rgba(var(--secondary-rgb), .3);
+    box-shadow: 0 0 0 1px rgba(var(--secondary-rgb), .3);
 }
 ul.request-devices-list li div.active {
-    color: var(--primary);
     background: #fff;
     transition: all .3s ease;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 1px var(--primary);
+    border-color: var(--secondary-1);
+    box-shadow: 0 0 0 1px var(--secondary-1);
 }
 /*
  * Problems
@@ -150,11 +153,14 @@ ul.request-problems-list li div h3 {
 }
 ul.request-problems-list li div:hover {
     color: #333;
+    border-color: rgba(var(--secondary-rgb), .3);
+    box-shadow: 0 0 0 1px rgba(var(--secondary-rgb), .3);
 }
 ul.request-problems-list li div.active {
-    color: var(--primary);
-    border-color: var(--primary-3);
-    box-shadow: 0 0 0 1px var(--primary);
+    background: #fff;
+    transition: all .3s ease;
+    border-color: var(--secondary-1);
+    box-shadow: 0 0 0 1px var(--secondary-1);
 }
 @media (max-width: 350px) {
     ul.request-problems-list li {
@@ -283,7 +289,6 @@ ul.request-problems-list li div.active {
     .button-prev-step {
         left: 0 !important;
         text-align: right !important;
-        background: rgba(222, 222, 222, 0.99) !important;
     }
     .button-next-step {
         right: 0 !important;
@@ -330,12 +335,14 @@ ul.timing-date {
 ul.timing-date li {
     width: 60px;
     height: 60px;
-    padding:12px 0;
+    padding: 12px 0;
     cursor: pointer;
+    overflow: hidden;
     text-align: center;
     border-radius: 50%;
     display: inline-block;
-    background-color: #dedede;
+    background-color: #eee !important;
+    white-space: nowrap;
     margin: 6px;
 }
 ul.timing-date li span {
@@ -353,6 +360,7 @@ ul.timing-date li .today {
     display: block;
 }
 ul.timing-date li.active {
+    color: #ffffff;
     opacity: 1 !important;
     background: var(--secondary) !important;
 }
@@ -365,6 +373,11 @@ ul.timing-date li.active {
 @media (max-width: 767px) {
     .hidden-md-down {
         display: none;
+    }
+    ul.timing-date li {
+        width: 60px;
+        height: 60px;
+        margin: 6px 3px;
     }
 }
 @media (max-width: 991px) {

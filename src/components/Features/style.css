@@ -1,0 +1,30 @@
+/*------------------/
+ *  Mobile App
+ *------------------*/
+.mobile-app {
+    width: 292px;
+    height: 609px;
+    background: no-repeat center center;
+    position: relative;
+    margin: 0 auto;
+    z-index: 3;
+}
+.mobile-app .mobile-app-inside {
+    top: 78px;
+    left: 50%;
+    width: 254px;
+    height: 452px;
+    background: no-repeat center center / cover;
+    position: absolute;
+    z-index: -1;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+.icon-button {
+    background-color: #2775FF !important;
+}
+@media (max-width: 768px) {
+    .icon-button {
+        display: none !important;
+    }
+}
