@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios';
+import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
@@ -9,14 +10,17 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import {Container, Row, Col} from 'react-grid-system';
 import FormControl from '@material-ui/core/FormControl';
-import 'moment-timezone';
-import moment from 'moment'
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import Fab from '@material-ui/core/Fab';
+import moment from 'moment'
+import LeftNavIcon from './img/baseline_chevron_left_white_18dp.png';
+import 'moment-timezone';
 
 import Select from '@material-ui/core/Select';
 
 import './style.css';
+
 
 const styles = theme => ({
     root: {
@@ -102,7 +106,6 @@ class Request extends Component {
 
 
     };
-
     handleClickDevice(id) {
 
         this.setState(prevState => ({
@@ -110,7 +113,7 @@ class Request extends Component {
                 ...prevState.form,
                 device_id: id
             }
-        }))
+        }));
 
 
         let problem_url = this.state.base_url + '/devices/' + id + '/problems';
@@ -121,7 +124,6 @@ class Request extends Component {
             this.setState({problems});
         });
     }
-
     handleChangeZipcode = (event) => {
         const value = event.target.value;
         this.setState({zipcode: value})
@@ -161,22 +163,32 @@ class Request extends Component {
 
 
     };
-
-
     handleClickProblem = (id, price) => {
 
         price = parseInt(price);
 
         let problemsArray = this.state.selectedProblems,
-            problemsIndex = problemsArray.indexOf(id);
+            problemsIndex = problemsArray.indexOf(id),
+            totalPrice = this.state.totalPrice,
+            problems = this.state.selectedProblems;
 
         if (problemsArray.includes(id) && problemsIndex > -1) {
-            this.state.totalPrice = this.state.totalPrice - price;
-            this.state.selectedProblems.splice(problemsIndex, 1);
+
+            problems.splice(problemsIndex, 1);
+            totalPrice = totalPrice - price;
+
         } else {
-            this.state.totalPrice = this.state.totalPrice + price;
-            this.state.selectedProblems.push(id);
+
+            totalPrice = totalPrice + price;
+            problems.push(id);
+
         }
+
+
+        this.setState({
+            totalPrice: totalPrice,
+            selectedProblems: problems
+        })
 
         this.setState(prevState => ({
             form: {
@@ -554,7 +566,14 @@ class Request extends Component {
         return (
             <div className="section-request section-request-horizontal">
                 <div className="request-header">
-
+                    <Container>
+                        <Link to="/">
+                            <Fab color="secondary" size="medium">
+                                <img src={LeftNavIcon} alt="back-button" className="img"/>
+                            </Fab>
+                        </Link>
+                        <h1 class="request-header-title">Phone Repair</h1>
+                    </Container>
                 </div>
                 <div className="request-menu">
                     <Container>

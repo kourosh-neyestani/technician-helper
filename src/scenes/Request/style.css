@@ -454,3 +454,26 @@ ul.last-step li .val {
         font-weight: 300;
     }
 }
+/*
+ * Request Page Header
+ */
+.request-header {
+    color:#fff;
+    height: 60px;
+    text-align: center;
+    background-color: var(--primary);
+}
+.request-header button {
+    top: 6px;
+    left: 3px;
+    position: absolute;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+.request-header .request-header-title {
+    font-size: 21px !important;
+    font-weight: 300;
+    line-height: 60px;
+    padding: 0;
+    margin: 0;
+}

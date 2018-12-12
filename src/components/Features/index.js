@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-grid-system';
 import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+
 import './style.css';
 
 class Features extends React.Component {
@@ -20,7 +20,7 @@ class Features extends React.Component {
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">Clean Code</h4>
                                 </div>
@@ -30,7 +30,7 @@ class Features extends React.Component {
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">Great Support</h4>
                                 </div>
@@ -40,7 +40,7 @@ class Features extends React.Component {
                             <div className="text-lg-right dir-lg-rtl text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">Unique Design</h4>
                                 </div>
@@ -52,7 +52,7 @@ class Features extends React.Component {
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">Modern Design</h4>
                                 </div>
@@ -62,7 +62,7 @@ class Features extends React.Component {
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">High Resolution</h4>
                                 </div>
@@ -72,7 +72,7 @@ class Features extends React.Component {
                             <div className="text-lg-left dir-lg-ltr text-center mt-30">
                                 <div className="mb-15">
                                     <Fab size="large" color="primary" aria-label="Add" className="icon-button">
-                                        <AddIcon />
+                                       
                                     </Fab>
                                     <h4 className="inline-block fs-21 pl-15 pr-15">Fully Responsive</h4>
                                 </div>
