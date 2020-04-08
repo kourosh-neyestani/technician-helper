@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd9e4c84-db2e-4864-bc6a-74c5028d8f16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/samsung-1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/samsung-2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/samsung-7.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/samsung-8.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Features/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Features/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Heading/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Heading/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Request/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Request/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Request/style.css" afterDir="false" />
     </list>
@@ -30,15 +17,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Request/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="229">
+              <caret line="575" column="37" selection-start-line="575" selection-start-column="37" selection-end-line="575" selection-end-column="37" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#constructor#0;n#Request#0" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Request#0" />
-                <element signature="n#!!block;n#handleClickGroup#0;n#Request#0" />
                 <element signature="n#!!block;n#handleClickDevice#0;n#Request#0" />
-                <element signature="n#!!block;n#getStepContent#0;n#Request#0" />
               </folding>
             </state>
           </provider>
@@ -48,10 +33,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>item</find>
-      <find>ul.timing-date li</find>
-      <find>zipcode</find>
-      <find>request</find>
       <find>request-me</find>
       <find>device</find>
       <find>problems</find>
@@ -65,12 +46,10 @@
       <find>overlay</find>
       <find>../assets/img</find>
       <find>inline-block fs-21 pl-10 pr-10&quot;&gt;</find>
-      <find>timing</find>
       <find>Butto</find>
       <find>Button</find>
       <find>over</find>
       <find>rgba(114, 2, 187, .92)</find>
-      <find>devices</find>
       <find>.root</find>
       <find>Fab</find>
       <find>request-header</find>
@@ -78,6 +57,12 @@
       <find>&lt;AddIcon /&gt;</find>
       <find>Icon</find>
       <find>Link</find>
+      <find>LeftN</find>
+      <find>devices</find>
+      <find>timing</find>
+      <find>colors</find>
+      <find>repait</find>
+      <find>next</find>
     </findStrings>
     <replaceStrings>
       <replace>Header</replace>
@@ -147,10 +132,9 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="125" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="1025" />
+    <option name="x" value="-10" />
+    <option name="width" value="1615" />
+    <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -159,51 +143,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-arsham" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-arsham" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
-              <item name="Request" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -259,18 +199,19 @@
       <workItem from="1544445218023" duration="8628000" />
       <workItem from="1544458207352" duration="4445000" />
       <workItem from="1544508889972" duration="40182000" />
-      <workItem from="1544597029628" duration="6121000" />
+      <workItem from="1544597029628" duration="10310000" />
+      <workItem from="1544681786309" duration="177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162888000" />
+    <option name="totallyTimeSpent" value="167254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27956298" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27956298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -352,30 +293,8 @@
     <entry file="file://$PROJECT_DIR$/src/components/Header/components/Navbar/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Header/sdad.js" />
     <entry file="file://$PROJECT_DIR$/src/scenes/Home/components/HomeCarousel/slick.css" />
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Request/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="467" column="11" selection-start-line="467" selection-start-column="11" selection-end-line="467" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js" />
+    <entry file="file://$PROJECT_DIR$/src/index.css" />
     <entry file="file://$PROJECT_DIR$/src/components/Header/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -383,17 +302,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Request/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Request/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="229">
+          <caret line="575" column="37" selection-start-line="575" selection-start-column="37" selection-end-line="575" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#Request#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#Request#0" />
-            <element signature="n#!!block;n#handleClickGroup#0;n#Request#0" />
             <element signature="n#!!block;n#handleClickDevice#0;n#Request#0" />
-            <element signature="n#!!block;n#getStepContent#0;n#Request#0" />
           </folding>
         </state>
       </provider>

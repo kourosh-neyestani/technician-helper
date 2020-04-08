@@ -104,7 +104,7 @@ ul.request-colors-list li div:hover {
     border-color: #ccc;
 }
 ul.request-colors-list li div.active {
-    border-color: var(--secondary);
+    border-color: #84ffff;
 }
 /*
  * Devices
@@ -125,14 +125,14 @@ ul.request-devices-list li div img {
     margin: 0 auto 18px;
 }
 ul.request-devices-list li div:hover {
-    border-color: rgba(var(--secondary-rgb), .3);
-    box-shadow: 0 0 0 1px rgba(var(--secondary-rgb), .3);
+    border-color: #84ffff;
+    box-shadow: 0 0 0 1px #84ffff;
 }
 ul.request-devices-list li div.active {
     background: #fff;
     transition: all .3s ease;
-    border-color: var(--secondary-1);
-    box-shadow: 0 0 0 1px var(--secondary-1);
+    border-color: #84ffff;
+    box-shadow: 0 0 0 1px #84ffff;
 }
 /*
  * Problems
@@ -153,14 +153,14 @@ ul.request-problems-list li div h3 {
 }
 ul.request-problems-list li div:hover {
     color: #333;
-    border-color: rgba(var(--secondary-rgb), .3);
-    box-shadow: 0 0 0 1px rgba(var(--secondary-rgb), .3);
+    border-color: #84ffff;
+    box-shadow: 0 0 0 1px #84ffff;
 }
 ul.request-problems-list li div.active {
     background: #fff;
     transition: all .3s ease;
-    border-color: var(--secondary-1);
-    box-shadow: 0 0 0 1px var(--secondary-1);
+    border-color: #84ffff;
+    box-shadow: 0 0 0 1px #84ffff;
 }
 @media (max-width: 350px) {
     ul.request-problems-list li {
@@ -360,9 +360,9 @@ ul.timing-date li .today {
     display: block;
 }
 ul.timing-date li.active {
-    color: #ffffff;
+    color: var(--primary);
     opacity: 1 !important;
-    background: var(--secondary) !important;
+    background: #84ffff !important;
 }
 
 @media (max-width: 569px) {

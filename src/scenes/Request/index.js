@@ -103,6 +103,7 @@ class Request extends Component {
 
         const devices = this.state.groups[t].devices;
         this.setState({devices, groupId: id});
+        this.handleNext();
 
 
     };
@@ -544,7 +545,7 @@ class Request extends Component {
                                         <div className="form-control button-block">
                                             <Button variant="contained" size="large" color="secondary" type="submit"
                                                     fullWidth={true}>
-                                                Submit Repait Request
+                                                Submit Repair Request
                                             </Button>
                                         </div>
                                     </Col>
@@ -572,7 +573,7 @@ class Request extends Component {
                                 <img src={LeftNavIcon} alt="back-button" className="img"/>
                             </Fab>
                         </Link>
-                        <h1 class="request-header-title">Phone Repair</h1>
+                        <h1 className="request-header-title">Phone Repair</h1>
                     </Container>
                 </div>
                 <div className="request-menu">
